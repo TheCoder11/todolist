@@ -65,9 +65,14 @@ controller.down.onEvent(ControllerButtonEvent.Pressed, function on_down_pressed(
 function on_a_pressed() {
     
     temp_deletedVariable = currentTasks.removeAt(selected_number)
-    deletedTasks.push(temp_deletedVariable)
-    suggestedTasks.push(temp_deletedVariable)
-    deletionTimes.push(game.runtime())
+    if (suggestedTasks.indexOf(temp_deletedVariable) >= 0) {
+        console.log("Task has already been deleted")
+    } else {
+        deletedTasks.push(temp_deletedVariable)
+        suggestedTasks.push(temp_deletedVariable)
+        deletionTimes.push(game.runtime())
+    }
+    
     console.log("" + temp_deletedVariable + " deleted")
 }
 

@@ -36,7 +36,7 @@ def on_b_pressed():
             print("Task already present!")
         else:
             currentTasks.append(tmp_newTask)
-            if deletedTasks.index(tmp_newTask) >= 0:
+            if tmp_newTask in deletedTasks:
                 suggestedTasks.append(tmp_newTask)
                 deletedTasks.remove_at(deletedTasks.index(tmp_newTask))
                 deletionTimes.remove_at(deletedTasks.index(tmp_newTask))
@@ -55,9 +55,12 @@ controller.down.on_event(ControllerButtonEvent.PRESSED, on_down_pressed)
 def on_a_pressed():
     global temp_deletedVariable
     temp_deletedVariable = currentTasks.remove_at(selected_number)
-    deletedTasks.append(temp_deletedVariable)
-    suggestedTasks.append(temp_deletedVariable)
-    deletionTimes.append(game.runtime())
+    if temp_deletedVariable in suggestedTasks:
+        print("Task has already been deleted")
+    else:
+        deletedTasks.append(temp_deletedVariable)
+        suggestedTasks.append(temp_deletedVariable)
+        deletionTimes.append(game.runtime())
     print("" + temp_deletedVariable + " deleted")
 
 deletionTimes: List[number] = []
