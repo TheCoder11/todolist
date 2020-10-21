@@ -57,6 +57,8 @@ def on_a_pressed():
     temp_deletedVariable = currentTasks.remove_at(selected_number)
     if temp_deletedVariable in suggestedTasks:
         print("Task has already been deleted")
+    elif len(currentTasks) == 0:
+        print("There are no tasks currently available")
     else:
         deletedTasks.append(temp_deletedVariable)
         suggestedTasks.append(temp_deletedVariable)

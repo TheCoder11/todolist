@@ -67,6 +67,8 @@ function on_a_pressed() {
     temp_deletedVariable = currentTasks.removeAt(selected_number)
     if (suggestedTasks.indexOf(temp_deletedVariable) >= 0) {
         console.log("Task has already been deleted")
+    } else if (currentTasks.length == 0) {
+        console.log("There are no tasks currently available")
     } else {
         deletedTasks.push(temp_deletedVariable)
         suggestedTasks.push(temp_deletedVariable)
