@@ -13,10 +13,12 @@ controller.up.onEvent(ControllerButtonEvent.Pressed, function on_up_pressed() {
 })
 controller.B.onEvent(ControllerButtonEvent.Pressed, function on_b_pressed() {
     let currentList2: string[];
+    let selected_number: number;
     
     if (controller.right.isPressed()) {
         console.log("SUGGESTED TASKS, Press B to select")
         currentList2 = suggestedTasks
+        selected_number = 0
         console.log(generateNewListString(suggestedTasks, selected_number))
         controller.A.onEvent(ControllerButtonEvent.Pressed, function on_a_pressed_suggested() {
             if (currentTasks.indexOf(suggestedTasks[selected_number]) >= 0) {

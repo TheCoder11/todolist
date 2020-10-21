@@ -13,6 +13,7 @@ def on_b_pressed():
     if controller.right.is_pressed():
         print("SUGGESTED TASKS, Press B to select")
         currentList2 = suggestedTasks
+        selected_number = 0
         print(generateNewListString(suggestedTasks, selected_number))
         
         def on_a_pressed_suggested():
