@@ -97,9 +97,9 @@ function generateNewListString(usedList: string[], selectedNumber: number = 0): 
 `
     for (let item of usedList) {
         if (usedList.indexOf(item) == selectedNumber) {
-            generatedString = generatedString + "(X). " + item
+            generatedString = generatedString + " -> " + item
         } else {
-            generatedString = generatedString + "(O). " + item
+            generatedString = generatedString + "    " + item
         }
         
         generatedString = generatedString + "\n"
