@@ -99,7 +99,7 @@ function generateNewListString(usedList: string[], selectedNumber: number = 0): 
         if (usedList.indexOf(item) == selectedNumber) {
             generatedString = generatedString + " -> " + item
         } else {
-            generatedString = generatedString + "    " + item
+            generatedString = generatedString + "  . " + item
         }
         
         generatedString = generatedString + "\n"

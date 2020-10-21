@@ -86,7 +86,7 @@ def generateNewListString(usedList: List[str], selectedNumber: number = 0):
         if usedList.index(item) == selectedNumber:
             generatedString = generatedString + " -> " + item
         else:
-            generatedString = generatedString + "    " + item
+            generatedString = generatedString + "  . " + item
         generatedString = generatedString + "\n"
     generatedString = generatedString + " ---------------------- \n"
     return generatedString
